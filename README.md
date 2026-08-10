@@ -1,1 +1,0 @@
-# atividades-algoritimos-e-programacao-ii
