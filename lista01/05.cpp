@@ -15,7 +15,8 @@ int main (){
     printf("Insert the b value: "); 
     scanf("%d", &b); 
      
-    printf("a mod b = %d", modwithoutmod(a, b));
+    if (a < b) swaplaces(a,b);
+    printf("%d %% %d = %d", a, b, modwithoutmod(a, b));
 
     return 0; 
 }
@@ -31,7 +32,7 @@ void swaplaces (int &x, int &y){
  
 int modwithoutmod (int x, int y){
      
-    if (x < y) swaplaces(x,y); 
+    if (x < y) swaplaces(x,y);
      
     while (x > y) x -= y;
      
