@@ -1,16 +1,11 @@
 #include <iostream>
-using namespace std;
- 
 #include "lista02.h"
 
-float harmonic (float *scores, size_t size);
-float arithmetic (float *scores, size_t size);
-float weighted (float *score, size_t size, int *weight);
-float average (float *scores, char meanMethod);
+using namespace std;
 
 int main (){
 
-    char options[] = {'a','h','w'}, chosen; 
+    char options[] = {'a','h','p'}, chosen; 
 
     do{
         printf("Do you want to [a]rithmetic, [h]armonic or [w]eighted averages? ");
@@ -21,7 +16,7 @@ int main (){
 
     for (int i = 0; i < 3; i++){
         printf("Insert the [%d] score: ", i);
-        scanf("%f", &scores[i]);
+        scanf("%.2f", &scores[i]);
     }
 
     printf("The average is: %.2f", average(scores, chosen));
@@ -44,17 +39,17 @@ float arithmetic (float *scores, size_t size){
     float sum = 0;
 
     for (int i = 0; i < size; i++){
-        sum += scores[i];
+        sum += scores[i]
     }
 
     return sum/size; 
 
 }
 
-float weighted (float *score, size_t size, int *weight){
+float weighted (float *score, size_t size, float *weight){
 
     float sum = 0;
-    int weightSum = 0;
+    int weightSum = 0 
 
         for (int i = 0; i < size; i++){
             sum += score[i] * weight[i];
