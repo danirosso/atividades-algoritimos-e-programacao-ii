@@ -1,44 +1,22 @@
-#include<iostream> 
+#include <iostream>
 using namespace std;
-#include "lista02.h" 
- 
-#define SIZE 30
- 
-void separateEvenFromOdd(int *mainArray, size_t size, int *odd, int *even, int &evenIndex, int &oddIndex);
- 
+
+#include "lista02.hpp"
+
 int main (){
+    int inArray[10], inArray1[10], outArray[20]; 
+    fillAnyArray(10, inArray, 10);
+    fillAnyArray(10, inArray1, 10);
      
-    int inArray[SIZE], oddArray[SIZE], evenArray[SIZE];
-    int oddIndex, evenIndex; 
-     
-    fillArray(10, inArray, SIZE);
-    printArray(inArray, SIZE); 
+    printAnyArray(inArray, 10); 
+    putchar('\n');
+    printAnyArray(inArray1, 10); 
     putchar('\n');
      
-    separateEvenFromOdd(inArray, SIZE, oddArray, evenArray, evenIndex, oddIndex);
+    uniteArray (inArray, inArray1, outArray, 10);
      
-    printf("Odd Array: ");
-    printArray(oddArray, oddIndex);
+    printAnyArray(outArray, 20); 
     putchar('\n');
-    printf("Even Array: ");
-    printArray(evenArray, evenIndex);
      
-}
- 
-void separateEvenFromOdd(int *mainArray, size_t size, int *odd, int *even, int &evenIndex, int &oddIndex){
-     
-    oddIndex = 0, evenIndex = 0; 
-     
-    for (size_t i = 0; i < size; i++){
-        if (mainArray[i] % 2 == 0){
-            even[evenIndex] = mainArray[i];
-            evenIndex++;
-        } else{
-            odd[oddIndex] = mainArray[i];
-            oddIndex++;
-        } 
-         
-    }
-       cout << evenIndex << "\t" << oddIndex << "\t" << size << endl; 
-     
+    return 0; 
 }

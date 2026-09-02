@@ -7,22 +7,21 @@ int main (){
      
     int inArray[50];
     filArray(10, inArray, 50);
-    
-    int outArray[50];
-
-    crescentOrder(inArray, 50, outArray);
-     
+ 
+    return 0;
 }
  
-void crescentOrder(int *in, size_t size, int *out){
+void bubbleSort (int *a, size_t size){
      
-    for (int i = 0; i < size; i++){
-        for (int j = 1; j < = size; j++){
-        out[i] = out[j];
-
-         
+    bool flag = true; 
+     
+    for (int i = 0; i < size - 1; i++){
+        if (a[i] > a[i+1]){
+            int hold = a[i];
+            a[i] = a[i+1];
+            a[i+1] = hold;
+            flag = true; 
     }
-     
-     
-     
+         
+         
 }
